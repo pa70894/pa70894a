@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+.container {
+    position: relative;
+    height: 100vh; 
+    overflow: hidden; 
+}
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('123.jpg') no-repeat center center;
+    background-size: cover; 
+    z-index: -1; 
+}
+header {
+    background: #0a931e;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+header:hover {
+    background-color:#70c606;
+    transition: 0.3s;
+}
+nav {
+    background: #b79106;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* 确保内容在伪元素上方 */
+    color: white; /* 设置内容颜色 */
+    padding: 20px; 
+}
+nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    
+}
+nav:hover {
+    background-color:#ebbf10;
+    transition: 0.3s;
+}
+section {
+    padding: 2rem;
+    border-bottom: 1px solid #ccc;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+table, th, td {
+    border: 1px solid #ccc;
+}
+th, td {
+    padding: 1rem;
+    text-align: left;
+}

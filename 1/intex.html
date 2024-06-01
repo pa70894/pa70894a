@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八大行星介紹</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <div class="container"></div>
+    <header>
+        <h1>八大行星介紹</h1>
+    </header>
+    
+    <nav>
+        <a href="#mercury">水星</a>
+        <a href="#venus">金星</a>
+        <a href="#earth">地球</a>
+        <a href="#mars">火星</a>
+        <a href="#jupiter">木星</a>
+        <a href="#saturn">土星</a>
+        <a href="#uranus">天王星</a>
+        <a href="#neptune">海王星</a>
+    </nav>
+    <section id="mercury">
+        <h2>水星 (Mercury)</h2>
+        <p>水星是太陽系中最靠近太陽的行星，並且是最小的行星。它的表面溫度變化極大，白天可達430攝氏度，夜晚可降至-180攝氏度。</p>
+    </section>
+    <section id="venus">
+        <h2>金星 (Venus)</h2>
+        <p>金星是太陽系中第二顆行星，大小和地球相似。金星有濃厚的大氣層，主要由二氧化碳組成，表面溫度極高，平均達到465攝氏度。</p>
+    </section>
+    <section id="earth">
+        <h2>地球 (Earth)</h2>
+        <p>地球是太陽系中第三顆行星，也是目前已知唯一存在生命的行星。地球有大量的水和適合生命居住的氣候條件。</p>
+    </section>
+    <section id="mars">
+        <h2>火星 (Mars)</h2>
+        <p>火星是太陽系中的第四顆行星，常被稱為紅色行星。火星上有最高的山脈和最大的峽谷，並且可能存在水的冰。</p>
+    </section>
+    <section id="jupiter">
+        <h2>木星 (Jupiter)</h2>
+        <p>木星是太陽系中最大的行星，其體積是地球的1300倍。木星有著強大的磁場和多達79顆的已知衛星。</p>
+    </section>
+    <section id="saturn">
+        <h2>土星 (Saturn)</h2>
+        <p>土星是太陽系中的第六顆行星，以其著名的光環系統而聞名。土星的環主要由冰和岩石組成，並且擁有62顆已知衛星。</p>
+    </section>
+    <section id="uranus">
+        <h2>天王星 (Uranus)</h2>
+        <p>天王星是太陽系中的第七顆行星，其自轉軸幾乎平行於軌道平面，導致極端的季節變化。天王星有著藍綠色的外觀，這是由於其大氣中的甲烷所致。</p>
+    </section>
+    <section id="neptune">
+        <h2>海王星 (Neptune)</h2>
+        <p>海王星是太陽系中的第八顆行星，距離太陽最遠。它有強烈的風暴和快速的風速，其藍色外觀是由於大氣中的甲烷所致。</p>
+    </section>
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offset = 80; // 设置偏移量，适应导航栏高度
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
